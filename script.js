@@ -18,10 +18,10 @@ const CaracteresEspeciais = "!@#$%&*?";
 
 function numerosAleatorios(limite) {
     const array = new Uint32Array(1);
-    const maximo = math.floor(4294967296 / limite) * limite;
+    const maximo = Math.floor(4294967296 / limite) * limite;
 
     do{
-        crypto.getRandomValues(Array);
+        crypto.getRandomValues(array);
     } while (array[0] >= maximo);
 
     return array[0] % limite;
@@ -90,5 +90,6 @@ function gerarSenha() {
         }
 }
 
-botaoGerer.addEventListener(click, gerarSenha);
-botaoGerer.addEventListener(click, copiarSenha);
+botaoGerer.addEventListener("click", gerarSenha);
+botaoGerer.addEventListener("click", copiarSenha);
+gerarSenha()
